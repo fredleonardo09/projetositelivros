@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Livro</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+<script>
+
+$(document).ready(function(){
+        var quantity = 1;
+
+        $('.maisquant').click(function(e){
+            e.preventDefault();
+            var quantity = parseInt($('#quantity').val());
+            $('#quantity').val(quantity + 1);
+        });
+
+        $('.menosquant').click(function(e){
+            e.preventDefault();
+            var quantity = parseInt($('#quantity').val());
+            if(quantity > 1){
+                $('#quantity').val(quantity - 1);
+            }
+        });
+
+    });
+
+</script>
+</head>
+
+
+    <body class="container-fluid">  
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand " href="pginicial.html">Portal dos Livros</a>
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+        
+                <div class="collapse navbar-collapse justify-content-end " id="navbarsExampleDefault">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="pginicial.html">Início</a>
+                        </li>                                                                
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contact.html">Contatos</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="product.html">Entre</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="pgcadastro.html">Cadastre-se</a>
+                        </li>
+                    </ul>
+        
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Buscar...">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-secondary btn-number">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <a class="btn btn-dark btn-sm ml-3" href="cart.html">
+                            <i class="fa fa-shopping-cart"></i> Carrinho
+                            <span class="badge badge-light">0</span>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <section class="jumbotron text-center">
+            <div class="container-fluid">
+                <img class="img-fluid" src="images/banner-portal-2.png" width="1100" height="00">
+                
+            </div>
+        </section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="pginicial.html">Início</a></li>
+                        <li class="breadcrumb-item"><a href="pgnovos.html">Novos</a></li>
+                        <li class="breadcrumb-item"><a href="pgcompra.html">Compra</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Livro</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Imagem -->
+            <div class="col-12 col-lg-6">
+                <div class="card bg-light mb-3">
+                    <div class="card-body">
+                        <a href="" data-toggle="modal" data-target="#productModal">
+                            <img class="img-fluid" src="images/vantagemnovo.jpg">
+                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- adicionar ao carrinho -->
+            <div class="col-12 col-lg-6 add_to_cart_block">
+                <div class="card bg-light mb-3">
+                    <div class="card-body">
+                        <p> <br><h2>As Vantagens de Ser Invisível</h2> </br>
+                        <h6>Autor: Chbosky, Stephen</h6>
+                            <br> <h5>Livro: Novo</h5> </br></p>
+                        <p class="price">R$25,90</p>
+                        
+                        <form method="get" action="cart.html">
+                            <div class="form-group">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label>Quantidade :</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button type="button" class="menosquant btn btn-danger btn-number"  data-type="minus" data-field="">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
+                                    <div class="input-group-append">
+                                        <button type="button" class="maisquant btn btn-success btn-number" data-type="plus" data-field="">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase">
+                                <i class="fa fa-shopping-cart"></i> Adicionar ao carrinho
+                            </a>
+                        </form>
+                        <div class="product_rassurance">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-truck fa-2x"></i><br/>Frete</li>
+                                <li class="list-inline-item"><i class="fa fa-credit-card fa-2x"></i><br/>Forma de Pagamento</li>
+                                
+                            </ul>
+                        </div>
+                        <div class="reviews_product p-3 mb-2 ">
+                            3 Avaliações
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            (4/5)
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <!-- Descrição -->
+            <div class="col-12">
+                <div class="card border-light mb-3">
+                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-align-justify"></i> Descrição</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Cartas mais íntimas que um diário, estranhamente únicas, hilárias e devastadoras - são apenas através delas que Charlie compartilha todo o seu mundinho com o leitor. Enveredando pelo universo dos primeiros encontros, dramas familiares, novos amigos, sexo, drogas e daquela música perfeita que nos faz sentir infinito, o roteirista Stephen Chbosky lança luz sobre o amadurecimento no ambiente da escola, um local por vezes opressor e sinônimo de ameaça. Uma leitura que deixa visível os problemas e crises próprios da juventude.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Avaliações -->
+            <div class="col-12" id="reviews">
+                <div class="card border-light mb-3">
+                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-comment"></i> Avaliações</div>
+                    <div class="card-body">
+                        <div class="review">
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            <meta itemprop="datePublished" content="01-01-2016">Janeiro 01, 2018
+    
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            por Eduardo Junior
+                            <p class="blockquote">
+                                <p class="mb-0">O livro é simplesmente incrível e memorável, e quando se lê na adolescência você se identifica com pelo menos um dos personagens e aposto que a maioria se identifica com o charlie. É um livro incrível e o filme é também mas obviamente existem partes do livro que não foram para o filme senão seria longo demais e muito pesado</p>
+                            </p>
+                            <hr>
+                        </div>
+                        <div class="review">
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            <meta itemprop="datePublished" content="01-01-2016">Março 11, 2020
+    
+                            <span class="fa fa-star" aria-hidden="true"></span>
+                            <span class="fa fa-star" aria-hidden="true"></span>
+                            <span class="fa fa-star" aria-hidden="true"></span>
+                            <span class="fa fa-star" aria-hidden="true"></span>
+                            <span class="fa fa-star" aria-hidden="true"></span>
+                            by Leonardo Silva
+                            <p class="blockquote">
+                                <p class="mb-0">Amei, ele consegue passar para o público as dificuldades em ser adolescente. Quem lê esse livro não vai se arrepender</p>
+                            </p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Footer -->
+    <footer class="text-white bg-primary">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-lg-4 col-xl-3">
+                    <h5>Sobre</h5>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <p align="justify"> 
+                        Reunimos vendedores e leitores, ampliando a diversidade literária e o acesso à leitura por meio de uma plataforma digital. Encontre na plataforna de Livros novos e usados pelos melhores preços e condições. Nosso site conta com uma equipe especializada e preparada para verificar a autenticidade dos anunciantes e dos compradores, para evitar ao maximo que tenhamos fraudes.                
+                    </p>
+                </div>
+    
+                
+    
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto ">
+                    <h5>Conteúdo</h5>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <ul class="list-unstyled">
+                        <li><a >Aceitamos Cartões</a></li>
+                        <li><a>Enviamos para todo Brasil</a></li>
+                        <li><a >Temos as melhores taxas</a></li>
+                        
+                    </ul>
+                </div>
+    
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    <h5>Contatos</h5>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-home mr-2"></i> Portal do Livro</li>
+                        <li><i class="fa fa-envelope mr-2"></i> ajuda@portaldolivro.com</li>
+                        <li><i class="fa fa-phone mr-2"></i> + 55 12345-4567</li>
+                        <li><i class="fa fa-print mr-2"></i> + 55 12345-4567</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>        
+    </footer>    
+</body>
+</html>
